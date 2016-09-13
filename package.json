@@ -1,0 +1,29 @@
+{
+  "name": "node-wii-v8",
+  "version": "0.0.1",
+  "description": "Node.js libcwiid asynchronous native bindings",
+  "main": "wii.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielHuisman/node-wii.git"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "express": "^4.12.3",
+    "socket.io": "^1.3.5"
+  },
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=2.0.0"
+  },
+  "directories": {
+    "build": "./build"
+  },
+  "author": "Lucas Tétreault",
+  "license": "MIT"
+}
