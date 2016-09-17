@@ -1,10 +1,10 @@
 {
   "targets": [
     {
-      "target_name": "wii",
+      "target_name": "wiiv8",
       "sources": [
-      	"src/base.cc",
-      	"src/wiimote.cc"
+      	"src/addon.cc",
+      	"src/wiiv8.cc"
       ],
       "libraries": [
       	"-lcwiid",
