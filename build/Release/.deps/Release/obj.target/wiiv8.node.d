@@ -1,1 +1,1 @@
-cmd_Release/obj.target/wiiv8.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=wiiv8.node -o Release/obj.target/wiiv8.node -Wl,--start-group Release/obj.target/wiiv8/src/addon.o Release/obj.target/wiiv8/src/wiiv8.o -Wl,--end-group -lcwiid -lbluetooth
+cmd_Release/obj.target/wiiv8.node := g++ -shared -pthread -rdynamic  -Wl,-soname=wiiv8.node -o Release/obj.target/wiiv8.node -Wl,--start-group Release/obj.target/wiiv8/src/addon.o Release/obj.target/wiiv8/src/wiiv8.o -Wl,--end-group -lcwiid -lbluetooth

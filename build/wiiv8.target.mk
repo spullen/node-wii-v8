@@ -4,6 +4,9 @@ TOOLSET := target
 TARGET := wiiv8
 DEFS_Debug := \
 	'-DNODE_GYP_MODULE_NAME=wiiv8' \
+	'-DUSING_UV_SHARED=1' \
+	'-DUSING_V8_SHARED=1' \
+	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION' \
@@ -17,7 +20,6 @@ CFLAGS_Debug := \
 	-Wall \
 	-Wextra \
 	-Wno-unused-parameter \
-	-m64 \
 	-g \
 	-O0
 
@@ -31,13 +33,16 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/tetreaul/.node-gyp/6.2.0/include/node \
-	-I/home/tetreaul/.node-gyp/6.2.0/src \
-	-I/home/tetreaul/.node-gyp/6.2.0/deps/uv/include \
-	-I/home/tetreaul/.node-gyp/6.2.0/deps/v8/include
+	-I/home/pi/.node-gyp/7.2.0/include/node \
+	-I/home/pi/.node-gyp/7.2.0/src \
+	-I/home/pi/.node-gyp/7.2.0/deps/uv/include \
+	-I/home/pi/.node-gyp/7.2.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=wiiv8' \
+	'-DUSING_UV_SHARED=1' \
+	'-DUSING_V8_SHARED=1' \
+	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DBUILDING_NODE_EXTENSION'
@@ -49,7 +54,6 @@ CFLAGS_Release := \
 	-Wall \
 	-Wextra \
 	-Wno-unused-parameter \
-	-m64 \
 	-O3 \
 	-fno-omit-frame-pointer
 
@@ -63,10 +67,10 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/tetreaul/.node-gyp/6.2.0/include/node \
-	-I/home/tetreaul/.node-gyp/6.2.0/src \
-	-I/home/tetreaul/.node-gyp/6.2.0/deps/uv/include \
-	-I/home/tetreaul/.node-gyp/6.2.0/deps/v8/include
+	-I/home/pi/.node-gyp/7.2.0/include/node \
+	-I/home/pi/.node-gyp/7.2.0/src \
+	-I/home/pi/.node-gyp/7.2.0/deps/uv/include \
+	-I/home/pi/.node-gyp/7.2.0/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/addon.o \
@@ -98,13 +102,11 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cc FORCE_DO_CMD
 ### Rules for final target.
 LDFLAGS_Debug := \
 	-pthread \
-	-rdynamic \
-	-m64
+	-rdynamic
 
 LDFLAGS_Release := \
 	-pthread \
-	-rdynamic \
-	-m64
+	-rdynamic
 
 LIBS := \
 	-lcwiid \
