@@ -268,16 +268,15 @@ namespace WiiV8 {
 
         wiiV8->Unref();
 
-        TryCatch try_catch;
+        //TryCatch try_catch;
 
-        Local<Function>::New(isolate, ar->callback)->
-                Call(isolate->GetCurrentContext()->Global(), 1, argv);
+        Local<Function>::New(isolate, ar->callback)->Call(isolate->GetCurrentContext()->Global(), 1, argv);
 
 //        ar->callback->Call(Null(isolate), 1, argv);
 //        ar->callback->Call(Context::GetCurrent()->Global(), 1, argv);
 
-        if(try_catch.HasCaught())
-            FatalException(isolate, try_catch);
+        //if(try_catch.HasCaught())
+        //    FatalException(isolate, try_catch);
 
         ar->callback.Reset();
 
